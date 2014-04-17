@@ -48,6 +48,14 @@ To solve this problems I have written gem `jsvars`.
  
   Here `APP` is a namespace which hold `users` and `address` variables. 
 
+  NOTE: If you are rendering using ajax then you have to add `js_vars_tag` in your partial.
+
+  i.e in partail `events.js.erb`
+      
+      $("#events").text("Events ajax");
+      <%= js_vars_tag %>
+
+
 - `to_jsvars` options
      
     @users.to_jsvars(:users, namespace: 'User', json: { only: [:id]})  
