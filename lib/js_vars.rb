@@ -9,8 +9,15 @@ module JsVars
 
   class << self
 
-    def add(vars, namepsace = 'APP')
-      VarMap.add(vars, namepsace) if vars.is_a?(Hash) 
+    attr_accessor :namespace
+
+    def configure(&block)
+      self.namespace = 'APP'
+      yield(self) if block_given?
+    end
+
+    def add(vars, namespace = nil)
+      VarMap.add(vars, namespace || self.namespace) if vars.is_a?(Hash) 
     end
 
     def clear

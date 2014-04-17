@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jirenpatel@gmail.com"]
   spec.description   = %q{Manage javascript variables in html templates}
   spec.summary       = %q{Manage javascript variables in html templates}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/jiren/js_vars"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

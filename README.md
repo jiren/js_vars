@@ -55,6 +55,19 @@ To solve this problems I have written gem `jsvars`.
   namespace: To change particular variable namespace
   json: To change rendering object fields.
 
+### Configuration - It is optional
+
+  To change default namespace add following code to your config initializers
+  
+  i.e in `config/initializers/js_vars.rb`
+ 	
+    JsVars.configure do |c|
+      c.namespace = 'MyNamespace'
+    end
+
+  So now by default all variables renders in  `MyNamespace` namespace
+  
+
 ## Installation
 
 Add this line to your application's Gemfile:

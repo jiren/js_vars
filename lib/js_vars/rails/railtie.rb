@@ -2,6 +2,7 @@ module JsVars
   module Rails
     class Railtie < ::Rails::Railtie
       initializer 'js_vars.view_helpers' do
+        JsVars.configure
         ActionView::Base.send(:include, JsVars::TagHelper)
       end
 
