@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'jsvars/version'
+require 'js_vars/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "jsvars"
-  spec.version       = Jsvars::VERSION
+  spec.name          = "js_vars"
+  spec.version       = JsVars::VERSION
   spec.authors       = ["Jiren Patel"]
-  spec.email         = ["jiren@joshsoftware.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.email         = ["jirenpatel@gmail.com"]
+  spec.description   = %q{Manage javascript variables in html templates}
+  spec.summary       = %q{Manage javascript variables in html templates}
   spec.homepage      = ""
   spec.license       = "MIT"
 
