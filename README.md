@@ -13,14 +13,14 @@ Many times we are using `javascript_tag` or `:javascript` to render javascript v
 
 i.e
 
-  :javascript
+  	:javascript
       var users = #{@users.to_json}  
     
-  #or 
+  OR 
     
-  javascript_tag do
-    var users = #{@users.to_json} 
-  end  
+  	javascript_tag do
+    	var users = #{@users.to_json} 
+  	end  
   
 So here there are no namespace for javascript variables i.e `var APP = {users: [....]}` and they are global. May be there are chances to conflict with other variables with same name. Also in debugging we find difficulties to find variable because variables are not define in namespace. If there are namespace so we can view all variables in namespace from debugging console.
 
@@ -30,18 +30,20 @@ To solve this problems I have written gem `jsvars`.
 
 - Add any object to js var map
 
-     @users.to_jsvars(:users)
-     @address.to_jsvars(:address)
+  		@users.to_jsvars(:users)
+     	@address.to_jsvars(:address)
 
 - For rendering all added variables in html. Add following tag to end of the layout.
      
-     = js_vars_tag 
-     # or
-     <%= js_vars_tag %>
+     	= js_vars_tag 
+     
+     OR
+     
+     	<%= js_vars_tag %>
     
-     #Output in html 
+     Output in html 
 
-     <script jsvars="jsvars">//<![CDATA[ if(!window.APP){ window.APP = {}};APP.users = [1,2,3]; window.address = 'pune'//]]></script>
+     		<script jsvars="jsvars">//<![CDATA[ if(!window.APP){ window.APP = {}};APP.users = [1,2,3]; window.address = 'pune'//]]></script>
      
  
   Here `APP` is a namespace which hold `users` and `address` variables. 
@@ -50,7 +52,7 @@ To solve this problems I have written gem `jsvars`.
      
     @users.to_jsvars(:users, namespace: 'User', json: { only: [:id]})  
 
-  namespace: To change perticaular variable namespce
+  namespace: To change particular variable namespace
   json: To change rendering object fields.
 
 ## Installation
