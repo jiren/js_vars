@@ -80,7 +80,7 @@ To solve this problems I have written gem `jsvars`.
 
 Add this line to your application's Gemfile:
 
-    gem 'jsvars'
+    gem 'js_vars'
 
 And then execute:
 
@@ -88,7 +88,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install jsvars
+    $ gem install js_vars
 
 ### Contributing
 
