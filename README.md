@@ -5,6 +5,7 @@ It is view helper to render javascript variables in one place with namespaces.
 How to add js variables.  `@user.to_jsvar(:user)` this will add `@user` json value to variable map and it is render by `js_vars_tag` in view 
 
 i.e
+    
     APP = { user: {name: 'jiren', id: 1}, address: {city: 'pune'} }
 
 ### Why?
@@ -43,10 +44,14 @@ To solve this problems I have written gem `jsvars`.
     
      Output in html 
 
-     		<script jsvars="jsvars">//<![CDATA[ if(!window.APP){ window.APP = {}};APP.users = [1,2,3]; window.address = 'pune'//]]></script>
+     	<script jsvars="jsvars">//<![CDATA[ 
+     	    if(!window.APP){ window.APP = {}};
+     		APP.users = [1,2,3]; 
+     		window.address = 'pune'
+     	//]]></script>
      
  
-  Here `APP` is a namespace which hold `users` and `address` variables. 
+  Here `APP` is a namespace which holds `users` and `address` variables. 
 
   NOTE: If you are rendering using ajax then you have to add `js_vars_tag` in your partial.
 
@@ -58,10 +63,10 @@ To solve this problems I have written gem `jsvars`.
 
 - `to_jsvars` options
      
-    @users.to_jsvars(:users, namespace: 'User', json: { only: [:id]})  
+        @users.to_jsvars(:users, namespace: 'User', json: { only: [:id]})  
 
-  namespace: To change particular variable namespace
-  json: To change rendering object fields.
+  - hnamespace: To change particular variable namespace
+  - json: To change rendering object fields.
 
 ### Configuration - It is optional
 
