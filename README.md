@@ -31,8 +31,8 @@ To solve this problems I have written gem `jsvars`.
 
 - Add any object to js var map
 
-  		@users.to_jsvars(:users)
-     	@address.to_jsvars(:address)
+  		@users.to_jsvar(:users)
+     	@address.to_jsvar(:address)
 
 - For rendering all added variables in html. Add following tag to end of the layout.
      
@@ -61,9 +61,9 @@ To solve this problems I have written gem `jsvars`.
       <%= js_vars_tag %>
 
 
-- `to_jsvars` options
+- `to_jsvar` options
      
-        @users.to_jsvars(:users, namespace: 'User', json: { only: [:id]})  
+        @users.to_jsvar(:users, namespace: 'User', json: { only: [:id]})  
 
   - hnamespace: To change particular variable namespace
   - json: To change rendering object fields.
